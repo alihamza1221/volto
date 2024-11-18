@@ -73,6 +73,19 @@ export function blockHasValue(data) {
   }
   return check(data);
 }
+/**
+ * Pluggable method to test if a block has a set value (any non-empty value)
+ * @function hideHandler
+ * @param {Object} data Block data
+ * @return {boolean} True if block has fixed attribute, or if the addBlockButton is disabled or block having value is not editable
+ */
+export const hideHandler = (data) => {
+  return (
+    !!data.fixed ||
+    (!config.experimental.addBlockButton.enabled &&
+      !(blockHasValue(data) && data.editable))
+  );
+};
 
 /**
  * Get block pairs of [id, block] from content properties
