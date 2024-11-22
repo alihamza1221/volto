@@ -41,10 +41,11 @@ export const Item = forwardRef(
     const gridSelected = useSelector((state) => state.form.ui.gridSelected);
     const dispatch = useDispatch();
 
-    const visible = !hideHandler(data);
-    const required = isBoolean(data.required)
-      ? data.required
-      : includes(config.blocks.requiredBlocks, data.type);
+    const visible = !hideHandler(data, props?.editable);
+
+    const required = isBoolean(data?.required)
+      ? data?.required
+      : includes(config.blocks.requiredBlocks, data?.['@type']);
 
     return (
       <li

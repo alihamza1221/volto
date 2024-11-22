@@ -52,7 +52,7 @@ const EditBlockWrapper = (props) => {
 
   const data = applyBlockDefaults({ data: originalData, ...blockProps, intl });
 
-  const visible = selected && !hideHandler(data);
+  const visible = selected && !hideHandler(data, editable);
 
   const required = isBoolean(data.required)
     ? data.required

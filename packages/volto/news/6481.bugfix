@@ -1,0 +1,1 @@
+Fixed Order blocks in sidebar doesn't respect layout restrictions by setting appropriate handlers in `Item.jsx`. @alihamza1221
